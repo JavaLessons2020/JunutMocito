@@ -1,9 +1,9 @@
 package lukas;
 
 
-import org.junit.*;
+import lukas.calc.Calculator;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
@@ -36,19 +36,25 @@ public class CalculatorTest {
         System.out.println("Before test");
     }
 
-    @Test
+    @Test(timeout = 1500)
     public void sum() {
         int res = calculator.sum(a, b);
         int exp = 30;
         System.out.println("exp = " + exp);
-        Assert.assertEquals(exp, res);
+       assertEquals(exp, res);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void div() {
         int res = calculator.div(a, b);
         int exp = -10;
         System.out.println("exp = " + exp);
-        Assert.assertEquals(exp, res);
+       assertEquals(exp, res);
+    }
+
+    @Test
+    public void testEx() {
+        boolean b = calculator.testEx(a);
+        assertFalse(b);
     }
 }

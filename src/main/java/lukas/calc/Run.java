@@ -1,4 +1,4 @@
-package lukas;
+package lukas.calc;
 
 public class Run {
     public static void main(String[] args) {

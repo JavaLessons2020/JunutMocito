@@ -1,4 +1,4 @@
-package lukas;
+package lukas.calc;
 
 public class Test {
     public void test(){
